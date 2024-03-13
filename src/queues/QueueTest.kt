@@ -1,4 +1,6 @@
-import service.EnrollService
+package queues
+
+import queues.service.EnrollService
 
 fun main() {
     val enrollSystem = EnrollService()

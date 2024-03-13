@@ -1,4 +1,4 @@
-package data
+package queues.data
 
 import java.time.LocalDateTime
 import java.util.UUID

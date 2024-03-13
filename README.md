@@ -1,1 +1,1 @@
-# data-structure
+# queues.data-structure

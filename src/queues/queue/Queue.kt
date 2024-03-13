@@ -1,7 +1,7 @@
-package queue
+package queues.queue
 
-import data.Node
-import data.Student
+import queues.data.Node
+import queues.data.Student
 
 class Queue {
     private var first: Node? = null

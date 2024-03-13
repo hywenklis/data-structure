@@ -1,8 +1,8 @@
-package service
+package queues.service
 
-import data.Enroll
-import data.Student
-import queue.Queue
+import queues.data.Enroll
+import queues.data.Student
+import queues.queue.Queue
 import java.time.LocalDateTime
 import java.util.UUID
 
@@ -12,7 +12,7 @@ class EnrollService {
 
     fun registerWaitingQueue(studentName: String) {
         queue.add(studentName)
-        println(">> Student $studentName added to waiting queue")
+        println(">> Student $studentName added to waiting queues.queue")
     }
 
     fun enrollStudent(): UUID? {
@@ -24,7 +24,7 @@ class EnrollService {
             println(">> Student ${student.name} successfully enrolled. Enroll: ${student.enroll} ")
             student.enroll.id
         } else {
-            println("No students in the waiting queue for enrollment.")
+            println("No students in the waiting queues.queue for enrollment.")
             null
         }
     }
