@@ -1,23 +1,23 @@
 package tree
 
 import tree.data.TreeNode
-import tree.functions.Delete
-import tree.functions.Fetch
-import tree.functions.Insert
+import tree.functions.TreeDelete
+import tree.functions.TreeFetch
+import tree.functions.TreeInsertion
 
 class BinaryTree(
-    private val insert: Insert,
-    private val delete: Delete,
-    private val fetch: Fetch
+    private val insert: TreeInsertion,
+    private val delete: TreeDelete,
+    private val fetch: TreeFetch
 ) {
     private var root: TreeNode? = null
 
     fun insert(data: Int) {
-        root = insert.recursive(root, data)
+        root = insert.insertNode(root, data)
     }
 
     fun delete(data: Int) {
-        root = delete.recursive(root, data)
+        root = delete.deleteNode(root, data)
     }
 
     fun inorderTraversal() = fetch.inOrderRecursive(root)

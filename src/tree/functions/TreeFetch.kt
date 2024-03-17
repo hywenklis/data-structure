@@ -2,7 +2,7 @@ package tree.functions
 
 import tree.data.TreeNode
 
-class Fetch {
+class TreeFetch {
     fun inOrderRecursive(node: TreeNode?) {
         if (node != null) {
             inOrderRecursive(node.left)

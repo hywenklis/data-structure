@@ -8,5 +8,5 @@ data class TreeNode(
 ) {
 
     fun height(node: TreeNode?): Int = node?.height ?: 0
-    fun balanceFactor(node: TreeNode?): Int = height(node?.left) - height(node?.right)
+    fun calculateBalanceFactor(node: TreeNode?): Int = height(node?.left) - height(node?.right)
 }
