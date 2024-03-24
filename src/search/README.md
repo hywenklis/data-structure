@@ -52,6 +52,9 @@ fun main() {
 }
 ```
 
+## Resultado
+![img_1.png](img_1.png)
+
 ## Observações
 - Esta implementação assume códigos de rastreamento exclusivos para cada pacote. Se múltiplos pacotes com o mesmo código de rastreamento forem adicionados, todos eles serão associados a esse código de rastreamento.
 - Para aplicações do mundo real, podem ser necessárias funcionalidades adicionais, como tratamento de erros, integração com banco de dados e interfaces de usuário.

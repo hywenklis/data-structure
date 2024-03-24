@@ -1,5 +1,7 @@
 package search
 
+import kotlin.system.measureTimeMillis
+
 fun main() {
     val trackingSystem = TrackingSystem()
 
@@ -12,7 +14,7 @@ fun main() {
     trackingSystem.addPackage(Package("MNO345", "Em Trânsito"))
     trackingSystem.addPackage(Package("PQR678", "Entregue"))
 
-    // Performing searches and printing results
+    // Performing searches and printing results with performance measurement
     performSearchAndPrint(trackingSystem, "ABC123")
     performSearchAndPrint(trackingSystem, "DEF456")
     performSearchAndPrint(trackingSystem, "GHI789")
@@ -23,14 +25,17 @@ fun main() {
 }
 
 fun performSearchAndPrint(trackingSystem: TrackingSystem, trackingCode: String) {
-    val searchResults = trackingSystem.searchPackages(trackingCode)
+    val searchTime = measureTimeMillis {
+        val searchResults = trackingSystem.searchPackages(trackingCode)
 
-    if (searchResults != null) {
-        println("Status do pacote com código $trackingCode:")
-        for (packageItem in searchResults) {
-            println("- ${packageItem.status}")
+        if (searchResults != null) {
+            println("Status do pacote com código $trackingCode:")
+            for (packageItem in searchResults) {
+                println("- ${packageItem.status}")
+            }
+        } else {
+            println("Pacote com código $trackingCode não encontrado.")
         }
-    } else {
-        println("Pacote com código $trackingCode não encontrado.")
     }
+    println("Tempo de busca para o pacote $trackingCode: $searchTime ms")
 }
